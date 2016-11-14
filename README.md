@@ -1,7 +1,7 @@
-# 2016fallcp_hw
+# 2016fllcp
 
-s40523219 的練習倉儲
+虎尾科技大學機械設計工程系 2016 FALL 計算機程式課程倉儲
 
-http://s40523219.github.io/2016fallcp_hw
+http://mdecourse.github.io/2016fallcp
 
-http://s40523219.github.io/2016fallcp_hw/blog
+http://mdecourse.github.io/2016fallcp/blog
