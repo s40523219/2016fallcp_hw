@@ -354,19 +354,151 @@ ctx.moveTo(100, 100)
 # 然後畫直線到 (150, 200) 座標點
 ctx.lineTo(150, 200)
 # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-ctx.strokeStyle = "blue"
 # 實際執行畫線
 ctx.moveTo(100, 200)
 ctx.lineTo(150, 100)
+ctx.strokeStyle = "blue"
+ctx.stroke()
+ctx.closePath()
+</script>
 
-ctx.lineWidth = 2
-ctx.moveTo(200, 200)
-ctx.lineTo(250, 250)
-ctx.strokeStyle = "red"
-ctx.lineWidth = 2
-ctx.moveTo(200, 250)
-ctx.lineTo(250, 200)
-ctx.strokeStyle = "red"
+<!-- 迴圈練習 -->
+
+<canvas id="japanflag2" width="600" height="250"></canvas>
+
+<script type="text/python3">
+from browser import document as doc
+import math
+canvas = doc["japanflag2"]
+ctx = canvas.getContext("2d")
+ #垂直
+ctx.beginPath()
+ctx.lineWidth = 1
+for i in range(6):
+    ctx.moveTo(100+i*20,50)
+    ctx.lineTo(100+i*20,150)
+#水平
+for i in range(5):
+    ctx.moveTo(100,50+i*25)
+    ctx.lineTo(200,50+i*25)
+ctx.strokeStyle = "blue"
+ctx.stroke()
+ctx.closePath()
+#粗線
+ctx.beginPath()
+ctx.lineWidth = 7
+ctx.moveTo(100,50)
+ctx.lineTo(200,50)
+ctx.stroke()
+ctx.closePath()
+</script>
+
+<!-- A Major -->
+
+<canvas id="japanflag3" width="600" height="250"></canvas>
+
+<script type="text/python3">
+from browser import document as doc
+import math
+canvas = doc["japanflag3"]
+ctx = canvas.getContext("2d")
+ #垂直
+ctx.beginPath()
+ctx.lineWidth = 1
+for i in range(6):
+    ctx.moveTo(100+i*20,50)
+    ctx.lineTo(100+i*20,150)
+#水平
+for i in range(5):
+    ctx.moveTo(100,50+i*25)
+    ctx.lineTo(200,50+i*25)
+ctx.strokeStyle = "blue"
+ctx.stroke()
+ctx.closePath()
+#粗線
+ctx.beginPath()
+ctx.lineWidth = 7
+ctx.moveTo(100,50)
+ctx.lineTo(200,50)
+ctx.stroke()
+ctx.closePath()
+
+#A Major 
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "25px Arial"
+ctx.fillText("A Major", 110, 25)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+# 1
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(140, 87.5, 7, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 135, 92.5)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(160, 87.5, 7, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 155, 92.5)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(180, 87.5, 7, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("3", 175, 92.5)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+# o
+ctx.beginPath()
+ctx.arc(120, 40, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.arc(200, 40, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+# x
+ctx.beginPath()
+#ctx.arc(100, 40, 5, 0, 2*math.pi, False)
+ctx.moveTo(95, 35)
+ctx.lineTo(105, 45)
+ctx.moveTo(105, 35)
+ctx.lineTo(95, 45)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
 ctx.stroke()
 ctx.closePath()
 </script>
