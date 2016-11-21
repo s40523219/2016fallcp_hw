@@ -55,26 +55,28 @@ from browser import document as doc
 import math
 canvas = doc["japanflag2"]
 ctx = canvas.getContext("2d")
+
  #垂直
-ctx.beginPath()
-ctx.lineWidth = 1
 for i in range(6):
+    ctx.beginPath()
+    ctx.lineWidth = 1
     ctx.moveTo(100+i*20,50)
     ctx.lineTo(100+i*20,150)
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
 #水平
 for i in range(5):
+    ctx.beginPath()
+    if i == 0:
+        ctx.lineWidth = 7
+    else:
+        ctx.lineWidth = 1
     ctx.moveTo(100,50+i*25)
     ctx.lineTo(200,50+i*25)
-ctx.strokeStyle = "blue"
-ctx.stroke()
-ctx.closePath()
-#粗線
-ctx.beginPath()
-ctx.lineWidth = 7
-ctx.moveTo(100,50)
-ctx.lineTo(200,50)
-ctx.stroke()
-ctx.closePath()
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
 &lt;/script&gt;
 
 &lt;!-- A Major --&gt;
@@ -116,11 +118,13 @@ ctx.fillText("A Major", 110, 25)
 ctx.fill()
 ctx.stroke()
 ctx.closePath()
-# 1
+
+# 1.2.3
 ctx.beginPath()
 ctx.fillStyle = 'black'
 ctx.strokeStyle = "black"
-ctx.arc(140, 87.5, 7, 0, 2*math.pi, False)
+for i in range(3):
+    ctx.arc(140+i*20, 87.5, 7, 0, 2*math.pi, False)
 ctx.fill()
 ctx.stroke()
 ctx.closePath()
@@ -128,39 +132,12 @@ ctx.beginPath()
 ctx.fillStyle = 'white'
 ctx.font = "16px Arial"
 ctx.fillText("1", 135, 92.5)
-ctx.fill()
-ctx.stroke()
-ctx.closePath()
-# 2
-ctx.beginPath()
-ctx.fillStyle = 'black'
-ctx.strokeStyle = "black"
-ctx.arc(160, 87.5, 7, 0, 2*math.pi, False)
-ctx.fill()
-ctx.stroke()
-ctx.closePath()
-ctx.beginPath()
-ctx.fillStyle = 'white'
-ctx.font = "16px Arial"
 ctx.fillText("2", 155, 92.5)
-ctx.fill()
-ctx.stroke()
-ctx.closePath()
-# 3
-ctx.beginPath()
-ctx.fillStyle = 'black'
-ctx.strokeStyle = "black"
-ctx.arc(180, 87.5, 7, 0, 2*math.pi, False)
-ctx.fill()
-ctx.stroke()
-ctx.closePath()
-ctx.beginPath()
-ctx.fillStyle = 'white'
-ctx.font = "16px Arial"
 ctx.fillText("3", 175, 92.5)
 ctx.fill()
 ctx.stroke()
 ctx.closePath()
+
 # o
 ctx.beginPath()
 ctx.arc(120, 40, 5, 0, 2*math.pi, False)
