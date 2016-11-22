@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>./</loc>
-<lastmod>2016-11-21T16:19:31-00:00</lastmod>
+<lastmod>2016-11-21T16:43:17-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./archives.html</loc>
-<lastmod>2016-11-21T16:19:31-00:00</lastmod>
+<lastmod>2016-11-21T16:43:17-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tags.html</loc>
-<lastmod>2016-11-21T16:19:31-00:00</lastmod>
+<lastmod>2016-11-21T16:43:17-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./categories.html</loc>
-<lastmod>2016-11-21T16:19:31-00:00</lastmod>
+<lastmod>2016-11-21T16:43:17-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -39,7 +39,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>./2016fall-cp-hui-tu-fan-li.html</loc>
+<loc>./w11-brython-hui-tu-lian-xi.html</loc>
+<lastmod>2016-11-21T12:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>./w10-brython-hui-tu-lian-xi.html</loc>
 <lastmod>2016-11-14T12:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
@@ -89,7 +96,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>./category/course.html</loc>
-<lastmod>2016-11-14T12:00:00+08:06</lastmod>
+<lastmod>2016-11-21T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -102,8 +109,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>./tag/shi-yong-dao-yin.html</loc>
-<lastmod>2016-11-04T12:00:00+08:06</lastmod>
+<loc>./tag/brython.html</loc>
+<lastmod>2016-11-21T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -137,6 +144,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>./tag/shi-yong-dao-yin.html</loc>
+<lastmod>2016-11-04T12:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>./author/s40523219.html</loc>
 <lastmod>2016-10-31T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -145,7 +159,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>./author/yen.html</loc>
-<lastmod>2016-11-14T12:00:00+08:06</lastmod>
+<lastmod>2016-11-21T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
