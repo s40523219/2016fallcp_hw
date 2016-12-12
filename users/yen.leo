@@ -170,7 +170,11 @@
 <v t="leo.20161114144546.1"><vh>@edit 20161114.md</vh></v>
 <v t="leo.20161121162859.1"><vh>@edit 20161121.md</vh></v>
 <v t="leo.20161205143716.1"><vh>@edit 20161205.md</vh></v>
-<v t="leo.20161212135718.1"><vh>@edit 20161212.md</vh></v>
+<v t="leo.20161212142930.1"><vh>@clean 20161212.md</vh>
+<v t="leo.20161212142930.2"><vh>ch01 print() 與 input()</vh></v>
+<v t="leo.20161212142930.3"><vh>cp a w13</vh></v>
+<v t="leo.20161212142930.4"><vh>ch02 str() 與 int() 與 float()</vh></v>
+</v>
 </v>
 </v>
 </v>
@@ -486,6 +490,199 @@ PLUGINS = ['liquid_tags.notebook', 'summary']
 <t tx="leo.20151213230957.1"># 設定網誌以 md 檔案建立的 file system date 為準, 無需自行設定
 
 DEFAULT_DATE = 'fs'</t>
+<t tx="leo.20161212142930.1">@language md
+Title: W14 Brython 開始練習
+Date: 2016-12-12 12:00
+Category: Course
+Tags: Brython
+Author: s40523219
+
+本週的學習重點在導入 Leo Editor &lt;a href="http://leoeditor.com/tutorial-programming.html"&gt;@clean&lt;/a&gt; 節點指令的用法, 利用子節點管理各章節的範例, 逐一將程式改寫為 Brython 格式後, 直接在瀏覽器中執行. 讓學員了解使用階層式架構管理資料的便利性.
+
+&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+以下為 &lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 中的 ch01 綜合範例, 其餘範例位於本 Leo Editor 專案檔中的 "Python3 程式範例" 節點, 請各組一一將範例程式碼與執行結果, 放入各學員的課程網誌中.
+
+本課程 W15 - W18 週將利用 &lt;a href="./../course/introduction_to_prog_python3_2012.pdf"&gt;introduction_to_prog_python3_2012.pdf&lt;/a&gt; 與 &lt;a href="./../course/python_for_everybody_2015.pdf"&gt;python_for_everybody_2015.pdf&lt;/a&gt; 中有關物件導向的說明, 並且配合 &lt;a href="https://github.com/mdecourse/webgame"&gt;https://github.com/mdecourse/webgame&lt;/a&gt; 倉儲中的 Leo Editor 專案, 希望各組能夠了解利用 Python3 與 Brython 語法處理&lt;a href="http://mde.tw/webgame/bs.html"&gt;靜態圖檔&lt;/a&gt;、&lt;a href="http://mde.tw/webgame/bunny.html"&gt;動態圖檔&lt;/a&gt;與&lt;a href="http://mde.tw/webgame/spacewar.html"&gt;網際遊戲&lt;/a&gt;的運作原理, 順利完成各組的期末報告.
+
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+@others
+</t>
+<t tx="leo.20161212142930.2">&lt;!-- ch01 基本的列印與輸入函式 --&gt;
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import alert
+
+'''
+    # 利用 input() 取得使用者輸入, 然後進行資料處理或運算後, 列出結果
+    #01-01.py
+    print ("Hello World!")
+    #01-02.py
+    thetext = input("Enter some text ")
+    print ("This is what you entered:")
+    print (thetext)
+    #01-03.py
+    # Note that \n within quote marks forces a new line to be printed
+    thetext = input("Enter some text\n")
+    print ("This is what you entered:")
+    print (thetext)
+    #01-04.py
+    prompt  = "Enter a some text "
+    thetext = input(prompt)
+    print ("This is what you entered:")
+    print (thetext)
+'''
+
+def get_input(ev):
+    the_input= input("請輸入")
+    alert("輸入為:"+str(the_input))
+
+document['ch01'].bind('click',get_input)
+&lt;/script&gt;
+&lt;button id="ch01"&gt;取輸入後, 列印出來&lt;/button&gt;
+
+&lt;pre class="brush: python"&gt;
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import alert
+
+def get_input(ev):
+    the_input= input("請輸入")
+    alert("輸入為:"+str(the_input))
+
+document['ch01'].bind('click',get_input)
+&lt;/script&gt;
+&lt;button id="ch01"&gt;取輸入後, 列印出來&lt;/button&gt;
+&lt;/pre&gt;</t>
+<t tx="leo.20161212142930.3">&lt;!-- 重複迴圈與 input() 練習 --&gt;
+
+&lt;div id="container"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+container = doc['container']
+mystring = ""
+num = input("請輸入重複執行次數:")
+#for i in range(1, 11):
+for i in range(1, int(num)+1):
+    mystring += str(i) + ": hello mde" + html.BR()
+container &lt;= mystring
+&lt;/script&gt;
+
+&lt;pre class="brush: python"&gt;
+&lt;div id="container"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+container = doc['container']
+mystring = ""
+num = input("請輸入重複執行次數:")
+#for i in range(1, 11):
+for i in range(1, int(num)+1):
+    mystring += str(i) + ": hello mde" + html.BR()
+container &lt;= mystring
+&lt;/script&gt;
+&lt;/pre&gt;
+
+開始進行範例分類:
+
+1. 接受使用者輸入, 然後利用 int() 或 str() 或 float() 函式轉為題目所需的資料型別
+input() 取回的資料為字串, 經過 int() 可以轉為整數
+若 num 變數內容為整數, 經過 str() 可以轉為字串, 然後再與其他字串進行結合後列印
+
+2. 練習: 編寫一個可以將使用者輸入的攝氏溫度, 轉為華氏溫度.
+
+&lt;div id="temperature"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+container = doc['temperature']
+mystring = ""
+cdegree = input("請輸入攝氏溫度:")
+fdegree = float(cdegree)*9/5 + 32
+output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度"
+container &lt;= output_string
+&lt;/script&gt;
+
+&lt;pre class="brush: python"&gt;
+&lt;div id="temperature"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+container = doc['temperature']
+mystring = ""
+cdegree = input("請輸入攝氏溫度:")
+fdegree = float(cdegree)*9/5 + 32
+output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度"
+container &lt;= output_string
+&lt;/script&gt;
+&lt;/pre&gt;
+
+接受使用者的輸入
+
+利用 alert() 顯示結果
+
+直接列印結果</t>
+<t tx="leo.20161212142930.4">&lt;script type="text/python3"&gt;
+from browser import document
+from browser import alert
+
+'''
+    #02-01.py
+    total = 0.0
+    number1=float(input("Enter the first number: "))
+    total = total + number1
+    number2=float(input("Enter the second number: "))
+    total = total + number2
+    number3=float(input("Enter the third number: "))
+    total = total + number3
+    average = total / 3
+    print ("The average is " + str(average))
+    ################################################################
+    #                                                                    #
+    # 02-02.py                                                     #
+    # Purpose: to demonstrate storage of a floating point number   #
+    #                                                              #
+    # Programmer: Anne Dawson                                      #
+    # Last updated: Sunday 21st March 2010, 12:45 PT               #
+    #                                                              #
+    # See this resource to find out how the input function works:  #
+    # http://www.annedawson.net/Python3_Input.txt                  #
+    #                                                              #
+    # See this resource to find out how important comments are:    #
+    # http://www.annedawson.net/PythonComments.txt                 #
+    #                                                              #
+    ################################################################
+    number1=float(input("Enter the first number: "))
+    number2=float(input("Enter the second number: "))
+    number3=float(input("Enter the third number: "))
+    total = number1 + number2 + number3
+    average = total / 3
+    print ("The average is: ")
+    print (average)
+    #02-03.py
+    total = 0.0
+    count = 0
+    while count &lt; 3:
+        number=float(input("Enter a number: "))
+        count = count + 1
+        total = total + number
+    average = total / 3
+    print ("The average is " + str(average))
+'''
+
+&lt;/script&gt;</t>
 <t tx="yen.20161011114704.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 @others
