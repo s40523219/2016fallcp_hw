@@ -171,7 +171,7 @@
 <v t="leo.20161212143808.1"><vh>@edit 20161212.md</vh></v>
 <v t="leo.20161226140125.1"><vh>@edit 20161219.md</vh></v>
 <v t="leo.20161226135002.1"><vh>@edit 20161226.md</vh></v>
-<v t="leo.20161226140306.1"><vh>newHeadline</vh></v>
+<v t="leo.20161226140306.1"><vh>@edit 20170109.md</vh></v>
 </v>
 </v>
 </v>
@@ -487,18 +487,6 @@ PLUGINS = ['liquid_tags.notebook', 'summary']
 <t tx="leo.20151213230957.1"># 設定網誌以 md 檔案建立的 file system date 為準, 無需自行設定
 
 DEFAULT_DATE = 'fs'</t>
-<t tx="leo.20161226140306.1">@color
-@language md
-
-Title: W16 
-Date: 2016-12-26 12:00
-Category: Course
-Tags: Brython
-Author: s40523219
-
-W16 
-
-</t>
 <t tx="yen.20161011114704.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 @others
