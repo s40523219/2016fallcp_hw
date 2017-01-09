@@ -32,7 +32,6 @@ con1 = document["con"]
 標準答案 = random.randint(1,100)
 #2. 取得使用者所猜的整數 (可以使用 try except )
 #con1 &lt;= str(標準答案)
-
 '''
 try:
     for i in range(1):
@@ -44,50 +43,88 @@ try:
 except:
     con1 &lt;= "請輸入整數！"
 '''
-
 def b1(e):
     alert("click")
 document["b1"].bind("click",b1)
 &lt;/script&gt;
 
 &lt;p&gt;&lt;button id = "b1"&gt;玩猜數字遊戲&lt;/button&gt;&lt;/p&gt;
-&lt;p&gt;猜數字遊戲:&lt;/p&gt;
-&lt;div id="id3"&gt;&lt;/div&gt;
+&lt;pre class="brush: python"&gt;
+&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
+&lt;div id="ex1"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+form browser import alert
+form browser import document
+form browser import html
+import random
+#print("test")
+#alert("test")
+con1 = document["con"]
+#1. 利用亂數模組產生標準答案
+標準答案 = random.randint(1,100)
+#2. 取得使用者所猜的整數 (可以使用 try except )
+#con1 &lt;= str(標準答案)
+def b1(e):
+    alert("click")
+document["b1"].bind("click",b1)
+&lt;/script&gt;
+&lt;/pre&gt;
 
+&lt;p&gt;猜數字遊戲:
+&lt;div id="id3"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import html
+import random&lt;/p&gt;
+&lt;p&gt;ex2 = document["ex2"]
+def guess(ev):
+    ex2.clear()
+    ex2 &amp;lt;= "開始玩猜數字遊戲" + html.BR()
+    標準答案 = random.randint(1, 100)
+    你猜的數字 = int(input("請輸入您所猜 1~100 間的整數:"))
+    猜測次數 = 1
+    while 標準答案 != 你猜的數字:
+        if 標準答案 &amp;lt; 你猜的數字:
+            id3.clear()
+            id3 &amp;lt;= "猜第" + str(猜測次數) + "次, 太大了，再猜一次 :)加油" + html.BR()
+        else:
+            ex2.clear()
+            ex2 &amp;lt;= "猜第" + str(猜測次數) + "次, 太小了，再猜一次 :)加油" + html.BR()
+        你猜的數字 = int(input("請輸入您所猜 1~100 間的整數:"))
+        猜測次數 += 1
+    ex2 &amp;lt;= "猜對了！答案為" + str(標準答案) + ", 總共猜了" + str(猜測次數) + "次"&lt;/p&gt;
+&lt;p&gt;document["but2"].bind("click", guess)
+&lt;/script&gt;
+&lt;button id="but2"&gt;玩猜數字遊戲&lt;/button&gt;&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
+&lt;div id="id3"&gt;&lt;/div&gt;
 &lt;script type="text/python3"&gt;
 from browser import document
 from browser import html
 import random
 
-id3 = document["id3"]
+ex2 = document["ex2"]
 def guess(ev):
-    # 清除 id3 中的內容
-    id3.clear()
-    id3 &lt;= "開始玩猜數字遊戲" + html.BR()
+    ex2.clear()
+    ex2 &lt;= "開始玩猜數字遊戲" + html.BR()
     標準答案 = random.randint(1, 100)
     你猜的數字 = int(input("請輸入您所猜 1~100 間的整數:"))
     猜測次數 = 1
     while 標準答案 != 你猜的數字:
         if 標準答案 &lt; 你猜的數字:
-            #print("太大了，再猜一次 :)加油")
-            # 清除 id3 中的內容
             id3.clear()
             id3 &lt;= "猜第" + str(猜測次數) + "次, 太大了，再猜一次 :)加油" + html.BR()
         else:
-            #print("太小了，再猜一次 :)加油")
-            # 清除 id3 中的內容
-            id3.clear()
-            id3 &lt;= "猜第" + str(猜測次數) + "次, 太小了，再猜一次 :)加油" + html.BR()
+            ex2.clear()
+            ex2 &lt;= "猜第" + str(猜測次數) + "次, 太小了，再猜一次 :)加油" + html.BR()
         你猜的數字 = int(input("請輸入您所猜 1~100 間的整數:"))
         猜測次數 += 1
+    ex2 &lt;= "猜對了！答案為" + str(標準答案) + ", 總共猜了" + str(猜測次數) + "次"
 
-    #print("猜對了！總共猜了", 猜測次數, "次")
-    id3 &lt;= "猜對了！答案為" + str(標準答案) + ", 總共猜了" + str(猜測次數) + "次"
-
-document["but3"].bind("click", guess)
+document["but2"].bind("click", guess)
 &lt;/script&gt;
-
-&lt;p&gt;&lt;button id="but3"&gt;玩猜數字遊戲&lt;/button&gt;&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>W15</title><link href="./w15.html" rel="alternate"></link><published>2016-12-19T12:00:00+08:00</published><updated>2016-12-19T12:00:00+08:00</updated><author><name>s40523219</name></author><id>tag:,2016-12-19:./w15.html</id><summary type="html">&lt;p&gt;W15&lt;/p&gt;
+&lt;/pre&gt;</summary><category term="Brython"></category></entry><entry><title>W15</title><link href="./w15.html" rel="alternate"></link><published>2016-12-19T12:00:00+08:00</published><updated>2016-12-19T12:00:00+08:00</updated><author><name>s40523219</name></author><id>tag:,2016-12-19:./w15.html</id><summary type="html">&lt;p&gt;W15&lt;/p&gt;
 &lt;h3&gt;cpa_w14-1 教學影片重點 : &lt;/h3&gt;
 
 &lt;p&gt;&lt;br&gt;

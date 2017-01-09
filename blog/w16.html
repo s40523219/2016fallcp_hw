@@ -345,7 +345,6 @@ con1 = document["con"]
 標準答案 = random.randint(1,100)
 #2. 取得使用者所猜的整數 (可以使用 try except )
 #con1 <= str(標準答案)
-
 '''
 try:
     for i in range(1):
@@ -357,50 +356,88 @@ try:
 except:
     con1 <= "請輸入整數！"
 '''
-
 def b1(e):
     alert("click")
 document["b1"].bind("click",b1)
 </script>
 
 <p><button id = "b1">玩猜數字遊戲</button></p>
-<p>猜數字遊戲:</p>
-<div id="id3"></div>
+<pre class="brush: python">
+<!-- 以下實際利用  Brython 畫圖 -->
+<div id="ex1"></div>
+<script type="text/python3">
+form browser import alert
+form browser import document
+form browser import html
+import random
+#print("test")
+#alert("test")
+con1 = document["con"]
+#1. 利用亂數模組產生標準答案
+標準答案 = random.randint(1,100)
+#2. 取得使用者所猜的整數 (可以使用 try except )
+#con1 <= str(標準答案)
+def b1(e):
+    alert("click")
+document["b1"].bind("click",b1)
+</script>
+</pre>
 
+<p>猜數字遊戲:
+<div id="id3"></div>
+<script type="text/python3">
+from browser import document
+from browser import html
+import random</p>
+<p>ex2 = document["ex2"]
+def guess(ev):
+    ex2.clear()
+    ex2 &lt;= "開始玩猜數字遊戲" + html.BR()
+    標準答案 = random.randint(1, 100)
+    你猜的數字 = int(input("請輸入您所猜 1~100 間的整數:"))
+    猜測次數 = 1
+    while 標準答案 != 你猜的數字:
+        if 標準答案 &lt; 你猜的數字:
+            id3.clear()
+            id3 &lt;= "猜第" + str(猜測次數) + "次, 太大了，再猜一次 :)加油" + html.BR()
+        else:
+            ex2.clear()
+            ex2 &lt;= "猜第" + str(猜測次數) + "次, 太小了，再猜一次 :)加油" + html.BR()
+        你猜的數字 = int(input("請輸入您所猜 1~100 間的整數:"))
+        猜測次數 += 1
+    ex2 &lt;= "猜對了！答案為" + str(標準答案) + ", 總共猜了" + str(猜測次數) + "次"</p>
+<p>document["but2"].bind("click", guess)
+</script>
+<button id="but2">玩猜數字遊戲</button></p>
+<pre class="brush: python">
+<!-- 以下實際利用  Brython 畫圖 -->
+<div id="id3"></div>
 <script type="text/python3">
 from browser import document
 from browser import html
 import random
 
-id3 = document["id3"]
+ex2 = document["ex2"]
 def guess(ev):
-    # 清除 id3 中的內容
-    id3.clear()
-    id3 <= "開始玩猜數字遊戲" + html.BR()
+    ex2.clear()
+    ex2 <= "開始玩猜數字遊戲" + html.BR()
     標準答案 = random.randint(1, 100)
     你猜的數字 = int(input("請輸入您所猜 1~100 間的整數:"))
     猜測次數 = 1
     while 標準答案 != 你猜的數字:
         if 標準答案 < 你猜的數字:
-            #print("太大了，再猜一次 :)加油")
-            # 清除 id3 中的內容
             id3.clear()
             id3 <= "猜第" + str(猜測次數) + "次, 太大了，再猜一次 :)加油" + html.BR()
         else:
-            #print("太小了，再猜一次 :)加油")
-            # 清除 id3 中的內容
-            id3.clear()
-            id3 <= "猜第" + str(猜測次數) + "次, 太小了，再猜一次 :)加油" + html.BR()
+            ex2.clear()
+            ex2 <= "猜第" + str(猜測次數) + "次, 太小了，再猜一次 :)加油" + html.BR()
         你猜的數字 = int(input("請輸入您所猜 1~100 間的整數:"))
         猜測次數 += 1
+    ex2 <= "猜對了！答案為" + str(標準答案) + ", 總共猜了" + str(猜測次數) + "次"
 
-    #print("猜對了！總共猜了", 猜測次數, "次")
-    id3 <= "猜對了！答案為" + str(標準答案) + ", 總共猜了" + str(猜測次數) + "次"
-
-document["but3"].bind("click", guess)
+document["but2"].bind("click", guess)
 </script>
-
-<p><button id="but3">玩猜數字遊戲</button></p>
+</pre>
             </div>
             <!-- /.entry-content -->
         </article>
